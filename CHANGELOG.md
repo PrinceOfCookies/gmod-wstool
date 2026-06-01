@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.2](https://github.com/Srlion/gmod-wstool/compare/v0.1.1...v0.1.2) (2026-06-01)
+
+
+### Bug Fixes
+
+* disable create-release in dist ([ec9990d](https://github.com/Srlion/gmod-wstool/commit/ec9990dec89af5edb2bbad372704d0821847e758))
+* ensure create-release is consistently set to false in dist configuration ([3ff1277](https://github.com/Srlion/gmod-wstool/commit/3ff1277a7efb42d9db0a16f07f63740696cf74fb))
+* finally gonna build ([b3b8c31](https://github.com/Srlion/gmod-wstool/commit/b3b8c313125bec27d0c9148d708cb6a0879b4fc1))
+
 ## [0.1.1](https://github.com/Srlion/gmod-wstool/compare/v0.1.0...v0.1.1) (2026-06-01)
 
 
