@@ -20,10 +20,13 @@ pub fn ctx() -> &'static egui::Context {
 }
 
 fn main() -> eframe::Result<()> {
+    let icon = eframe::icon_data::from_png_bytes(include_bytes!("../assets/icon.png")).unwrap();
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
+            .with_app_id("gmod-wstool")
             .with_inner_size([1000.0, 400.0])
-            .with_min_inner_size([600.0, 400.0]),
+            .with_min_inner_size([600.0, 400.0])
+            .with_icon(icon),
         persist_window: true,
         ..Default::default()
     };

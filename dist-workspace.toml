@@ -1,14 +1,10 @@
 [workspace]
 members = ["cargo:."]
 
-# Config for 'dist'
 [dist]
-# The preferred dist version to use in CI (Cargo.toml SemVer syntax)
 cargo-dist-version = "0.32.0"
-# CI backends to support
 ci = "github"
-# The installers to generate for each app
-installers = ["shell", "powershell", "msi"]
+installers = ["shell", "powershell"]
 # Target platforms to build apps for (Rust target-triple syntax)
 targets = [
   "aarch64-apple-darwin",
@@ -18,6 +14,10 @@ targets = [
 ]
 # Path that installers should place binaries in
 install-path = "CARGO_HOME"
-# Whether to install an updater program
 install-updater = false
 create-release = false
+include = [
+  "redistributable_bin/linux64/libsteam_api.so",
+  "redistributable_bin/win64/steam_api64.dll",
+  "redistributable_bin/osx/libsteam_api.dylib",
+]
