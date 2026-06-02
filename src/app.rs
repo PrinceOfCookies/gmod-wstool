@@ -235,7 +235,11 @@ impl App {
         }
         ui.add_space(2.0);
 
-        ui.label(egui::RichText::new("v0.1.0").weak().size(11.0));
+        ui.label(
+            egui::RichText::new(env!("CARGO_PKG_VERSION"))
+                .weak()
+                .size(11.0),
+        );
     }
 
     fn show_content_panel(&mut self, ui: &mut egui::Ui) {
