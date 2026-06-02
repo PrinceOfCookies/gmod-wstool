@@ -24,8 +24,8 @@ fn main() -> eframe::Result<()> {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_app_id("gmod-wstool")
-            .with_inner_size([1000.0, 400.0])
-            .with_min_inner_size([600.0, 400.0])
+            .with_inner_size([735.0, 745.0])
+            .with_min_inner_size([500.0, 400.0])
             .with_icon(icon),
         persist_window: true,
         ..Default::default()
