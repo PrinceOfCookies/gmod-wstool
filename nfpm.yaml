@@ -11,7 +11,7 @@ homepage: https://github.com/Srlion/gmod-wstool
 license: MIT
 
 contents:
-  - src: ./target/debug/gmod-wstool
+  - src: ./target/release/gmod-wstool
     dst: /usr/lib/gmod-wstool/gmod-wstool
     file_info:
       mode: 0755
