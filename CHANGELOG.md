@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/Srlion/gmod-wstool/compare/v0.1.4...v0.1.5) (2026-06-02)
+
+
+### Bug Fixes
+
+* update nfpm installation method to use apt repository ([ff77039](https://github.com/Srlion/gmod-wstool/commit/ff770393a4f4e9387fd694194875748b484fcd97))
+
 ## [0.1.4](https://github.com/Srlion/gmod-wstool/compare/v0.1.3...v0.1.4) (2026-06-02)
 
 
