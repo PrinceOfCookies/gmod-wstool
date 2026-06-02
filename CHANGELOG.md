@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/Srlion/gmod-wstool/compare/v0.1.3...v0.1.4) (2026-06-02)
+
+
+### Bug Fixes
+
+* try nfpm and cargo-wix ([9f0561e](https://github.com/Srlion/gmod-wstool/commit/9f0561ef1e820f598186450d7b070366335de0d5))
+
 ## [0.1.3](https://github.com/Srlion/gmod-wstool/compare/v0.1.2...v0.1.3) (2026-06-01)
 
 
