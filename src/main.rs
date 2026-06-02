@@ -53,18 +53,31 @@ fn setup_fonts(ctx: &egui::Context) {
     );
 
     fonts.font_data.insert(
+        "noto_emoji".to_owned(),
+        egui::FontData::from_static(include_bytes!("../assets/NotoEmoji-Regular.ttf")).into(),
+    );
+
+    fonts.font_data.insert(
         "unifont".to_owned(),
         egui::FontData::from_static(include_bytes!("../assets/unifont-17.0.03.otf")).into(),
     );
 
     fonts.families.insert(
         egui::FontFamily::Proportional,
-        vec!["noto".to_owned(), "unifont".to_owned()],
+        vec![
+            "noto".to_owned(),
+            "noto_emoji".to_owned(),
+            "unifont".to_owned(),
+        ],
     );
 
     fonts.families.insert(
         egui::FontFamily::Monospace,
-        vec!["noto".to_owned(), "unifont".to_owned()],
+        vec![
+            "noto".to_owned(),
+            "noto_emoji".to_owned(),
+            "unifont".to_owned(),
+        ],
     );
 
     ctx.set_fonts(fonts);
