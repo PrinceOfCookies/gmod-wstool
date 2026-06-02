@@ -4,6 +4,6 @@ Name=Garry's Mod Workshop Tool
 Comment=Manage Garry's Mod workshop addons
 Exec=gmod-wstool
 Icon=gmod-wstool
-Terminal=true
+Terminal=false
 Categories=Utility;Game;
 Keywords=gmod;workshop;wstool;addons;
