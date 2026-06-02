@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/Srlion/gmod-wstool/compare/v0.1.6...v0.1.7) (2026-06-02)
+
+
+### Bug Fixes
+
+* add archlinux ([51e1432](https://github.com/Srlion/gmod-wstool/commit/51e1432adb453688c1958c30e0bedad2b16d52fc))
+
 ## [0.1.6](https://github.com/Srlion/gmod-wstool/compare/v0.1.5...v0.1.6) (2026-06-02)
 
 
