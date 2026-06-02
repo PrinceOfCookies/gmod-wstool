@@ -1,5 +1,9 @@
 # gmod-wstool
 
+Manage, download, and publish your Gmod workshop addons with ease.
+
+<img src="assets/icon.svg" width="128" alt="Gmod Workshop Tool">
+
 ## Installation
 
 ### Linux
