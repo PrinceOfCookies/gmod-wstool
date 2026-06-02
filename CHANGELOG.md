@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.0](https://github.com/Srlion/gmod-wstool/compare/v0.1.7...v0.2.0) (2026-06-02)
+
+
+### Features
+
+* implement global ignore list ([b15b391](https://github.com/Srlion/gmod-wstool/commit/b15b3913c7fe4cf0a48260f3026c54cfe0a4e51f))
+
+
+### Bug Fixes
+
+* add application shortcut and registry entry for gmod-wstool ([b10aa94](https://github.com/Srlion/gmod-wstool/commit/b10aa943c2a5bdb4f476994734ebd9414a85ee2f))
+* adjust window size and minimum dimensions ([074f880](https://github.com/Srlion/gmod-wstool/commit/074f8803821a63414613de18efb86d4e57a44013))
+* display actual version number ([76949ef](https://github.com/Srlion/gmod-wstool/commit/76949ef22adb24a5930c5714439709389983c407))
+* load emoji font so symbols don't fall back to unifont ([9487f14](https://github.com/Srlion/gmod-wstool/commit/9487f144d9f6d852af281e4972aced4a88fd5c4e))
+
 ## [0.1.7](https://github.com/Srlion/gmod-wstool/compare/v0.1.6...v0.1.7) (2026-06-02)
 
 
