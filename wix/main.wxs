@@ -102,6 +102,22 @@
                             KeyPath='yes' />
                     </Component>
 
+                    <Component Id='ApplicationShortcut' Guid='*'>
+                        <Shortcut Id='ApplicationStartMenuShortcut'
+                            Name='gmod-wstool'
+                            Description='A tool for managing Garry&apos;s Mod workshop addons'
+                            Target='[Bin]gmod-wstool.exe'
+                            WorkingDirectory='Bin' />
+                        <RemoveFolder Id='CleanUpShortcut' Directory='ApplicationProgramsFolder'
+                            On='uninstall' />
+                        <RegistryValue Root='HKCU'
+                            Key='Software\Srlion\gmod-wstool'
+                            Name='installed'
+                            Type='integer'
+                            Value='1'
+                            KeyPath='yes' />
+                    </Component>
+
                     <Directory Id='Bin' Name='bin'>
                         <Component Id='Path' Guid='FF285237-2AAE-445F-91A7-BE90B2A73301'
                             KeyPath='yes'>
@@ -133,6 +149,9 @@
                     </Directory>
                 </Directory>
             </Directory>
+            <Directory Id='ProgramMenuFolder'>
+                <Directory Id='ApplicationProgramsFolder' Name='gmod-wstool' />
+            </Directory>
         </Directory>
 
         <Feature
@@ -152,6 +171,7 @@
 
             <ComponentRef Id='binary0' />
             <ComponentRef Id='steam_api' />
+            <ComponentRef Id='ApplicationShortcut' />
 
             <Feature
                 Id='Environment'
