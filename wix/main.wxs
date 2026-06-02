@@ -104,6 +104,11 @@
 
                     <Component Id='ApplicationShortcut' Guid='*'>
                         <Shortcut Id='ApplicationStartMenuShortcut'
+                            Name="Garry's Mod Workshop Tool"
+                            Description='A tool for managing Garry&apos;s Mod workshop addons'
+                            Target='[Bin]gmod-wstool.exe'
+                            WorkingDirectory='Bin' />
+                        <Shortcut Id='ApplicationStartMenuShortcutAlias'
                             Name='gmod-wstool'
                             Description='A tool for managing Garry&apos;s Mod workshop addons'
                             Target='[Bin]gmod-wstool.exe'
