@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1](https://github.com/Srlion/gmod-wstool/compare/v0.2.0...v0.2.1) (2026-06-02)
+
+
+### Bug Fixes
+
+* add application shortcut for Garry's Mod Workshop Tool ([83dce4d](https://github.com/Srlion/gmod-wstool/commit/83dce4da1cdd49471cd16228df7753274f1b6fd9))
+* add desktop entry and icon for gmod-wstool ([85c30ad](https://github.com/Srlion/gmod-wstool/commit/85c30ad059aae1d843aa9a414f56d55693dc6430))
+
 ## [0.2.0](https://github.com/Srlion/gmod-wstool/compare/v0.1.7...v0.2.0) (2026-06-02)
 
 
