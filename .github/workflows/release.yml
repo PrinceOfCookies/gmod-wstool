@@ -46,8 +46,10 @@ jobs:
           export VERSION="${VERSION#v}"
           nfpm package -p deb -t .
           nfpm package -p rpm -t .
+          nfpm package -p archlinux -t .
       - uses: softprops/action-gh-release@v3
         with:
           files: |
             *.deb
             *.rpm
+            *.pkg.tar.zst
