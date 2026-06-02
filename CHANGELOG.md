@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/Srlion/gmod-wstool/compare/v0.2.1...v0.2.2) (2026-06-02)
+
+
+### Bug Fixes
+
+* set Terminal=false in gmod-wstool desktop entry ([974e0f9](https://github.com/Srlion/gmod-wstool/commit/974e0f92b9d9ed9769a1b1f803d4aeb5005fb490))
+
 ## [0.2.1](https://github.com/Srlion/gmod-wstool/compare/v0.2.0...v0.2.1) (2026-06-02)
 
 
