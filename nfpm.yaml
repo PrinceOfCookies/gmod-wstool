@@ -1,0 +1,26 @@
+name: gmod-wstool
+arch: amd64
+platform: linux
+version: ${VERSION}
+section: utils
+priority: optional
+maintainer: Srlion <srlion32@gmail.com>
+description: A tool for managing Garry's Mod workshop addons
+vendor: Srlion
+homepage: https://github.com/Srlion/gmod-wstool
+license: MIT
+
+contents:
+  - src: ./target/debug/gmod-wstool
+    dst: /usr/lib/gmod-wstool/gmod-wstool
+    file_info:
+      mode: 0755
+
+  - src: ./redistributable_bin/linux64/libsteam_api.so
+    dst: /usr/lib/gmod-wstool/libsteam_api.so
+    file_info:
+      mode: 0755
+
+  - src: /usr/lib/gmod-wstool/gmod-wstool
+    dst: /usr/bin/gmod-wstool
+    type: symlink

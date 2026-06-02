@@ -5,12 +5,7 @@ edition = "2024"
 repository = "https://github.com/Srlion/gmod-wstool"
 authors = ["Srlion <srlion32@gmail.com>"]
 description = "A tool for managing Garry's Mod workshop addons"
-
-[package.metadata.wix]
-upgrade-guid = "397CC3A6-86C0-4234-B048-CE64B94EB490"
-path-guid = "A078B199-B8E0-4F2E-BC20-FE299CFD6C6C"
-license = false
-eula = false
+license = "MIT"
 
 [dependencies]
 arc-swap = "1.9.1"
@@ -35,8 +30,3 @@ wildmatch = "2.6.1"
 opt-level = 3
 lto = "fat"
 codegen-units = 1
-
-# The profile that 'dist' will build with
-[profile.dist]
-inherits = "release"
-lto = "thin"
