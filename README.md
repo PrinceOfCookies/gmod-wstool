@@ -2,16 +2,12 @@
 
 ## Installation
 
-### Linux & macOS
+### Linux
 
 ```sh
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/Srlion/gmod-wstool/releases/latest/download/gmod-wstool-installer.sh | sh
+curl -fsSL https://raw.githubusercontent.com/Srlion/gmod-wstool/master/install.sh | bash
 ```
 
 ### Windows
 
-#### PowerShell
-
-```powershell
-powershell -ExecutionPolicy Bypass -c "irm https://github.com/Srlion/gmod-wstool/releases/latest/download/gmod-wstool-installer.ps1 | iex"
-```
+Download the latest `.msi` from the [releases page](https://github.com/Srlion/gmod-wstool/releases/latest) and run it.
