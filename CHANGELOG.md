@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.6](https://github.com/Srlion/gmod-wstool/compare/v0.1.5...v0.1.6) (2026-06-02)
+
+
+### Bug Fixes
+
+* update gmod-wstool source path to release build ([8e44bb0](https://github.com/Srlion/gmod-wstool/commit/8e44bb0e70066ce487902c20951f914b7beba556))
+
 ## [0.1.5](https://github.com/Srlion/gmod-wstool/compare/v0.1.4...v0.1.5) (2026-06-02)
 
 
