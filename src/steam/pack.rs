@@ -5,7 +5,7 @@ use wildmatch::WildMatch;
 
 use super::client;
 
-const DEFAULT_IGNORES: &[&str] = &[
+pub const DEFAULT_IGNORES: &[&str] = &[
     "*thumbs.db",
     "*desktop.ini",
     ".git*",
@@ -38,6 +38,7 @@ pub fn pack_to_temp_dir(title: String, src_dir: &Path) -> Result<PathBuf, String
         .iter()
         .map(|s| s.to_string())
         .chain(user_ignores)
+        .chain(crate::ignores::get())
         .map(|p| WildMatch::new(&p))
         .collect();
 

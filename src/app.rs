@@ -2,6 +2,7 @@ use eframe::egui;
 use egui::{Spinner, Vec2};
 
 use crate::async_load::AsyncLoad;
+use crate::ignores;
 use crate::tabs::Tab;
 use crate::tabs::download::DownloadPanel;
 use crate::tabs::my_workshop::WorkshopPanel;
@@ -33,6 +34,7 @@ impl App {
             .unwrap_or_else(settings::default_download_path);
         if let Some(s) = cc.storage {
             whitelist::seed(s.get_string(whitelist::STORAGE_KEY));
+            ignores::seed(s.get_string(ignores::STORAGE_KEY));
         }
         Self {
             current_tab: Tab::MyWorkshop,
@@ -60,6 +62,7 @@ impl eframe::App for App {
     fn save(&mut self, storage: &mut dyn eframe::Storage) {
         settings::save_download_path(storage, self.download_panel.dest_path());
         storage.set_string(whitelist::STORAGE_KEY, whitelist::to_storage_string());
+        storage.set_string(ignores::STORAGE_KEY, ignores::to_storage_string());
     }
 }
 

@@ -7,6 +7,7 @@ use crate::app::App;
 
 mod app;
 mod async_load;
+mod ignores;
 mod settings;
 mod steam;
 mod tabs;

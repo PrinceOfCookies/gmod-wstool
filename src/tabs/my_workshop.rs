@@ -45,6 +45,7 @@ struct Fields {
     preview_path: String,
     change_note: String,
     fix_size: bool,
+    extra_ignores: String,
 }
 
 struct Editor {
@@ -89,6 +90,7 @@ impl Editor {
             preview_path: String::new(),
             change_note: String::new(),
             fix_size: false,
+            extra_ignores: String::new(),
         };
         Self {
             id: item.id,
@@ -113,6 +115,8 @@ pub struct WorkshopPanel {
     editor: Option<Editor>,
     confirm_leave: bool,
     create_job: Option<CreateJob>,
+    show_ignores: bool,
+    ignores_buf: String,
 }
 
 impl WorkshopPanel {
@@ -132,6 +136,8 @@ impl WorkshopPanel {
             editor: None,
             confirm_leave: false,
             create_job: None,
+            show_ignores: false,
+            ignores_buf: String::new(),
         }
     }
 
@@ -201,6 +207,12 @@ impl WorkshopPanel {
                     .clicked()
                 {
                     self.create_job = Some(CreateJob::start());
+                }
+                let btn = egui::Button::new(RichText::new("⛔ Ignore list").color(Color32::WHITE))
+                    .fill(Color32::from_rgb(180, 60, 60));
+                if ui.add(btn).clicked() {
+                    self.ignores_buf = crate::ignores::get().join("\n");
+                    self.show_ignores = true;
                 }
             });
         });
@@ -294,6 +306,7 @@ impl WorkshopPanel {
                 });
             });
         }
+        self.show_ignores_modal(ui);
         if loading {
             ui.ctx().request_repaint();
         }
@@ -419,6 +432,56 @@ impl WorkshopPanel {
                     });
                 });
             });
+    }
+
+    fn show_ignores_modal(&mut self, ui: &mut egui::Ui) {
+        if !self.show_ignores {
+            return;
+        }
+        let modal = egui::Modal::new(egui::Id::new("ignore_list")).show(ui.ctx(), |ui| {
+            ui.set_width(420.0);
+            ui.label(RichText::new("Global ignore list").strong().size(15.0));
+            ui.add_space(2.0);
+            ui.label(
+                RichText::new(
+                    "One glob per line, skipped when packing any addon. Case-insensitive.",
+                )
+                .weak()
+                .size(12.0),
+            );
+            ui.add_space(12.0);
+            ui.add(
+                egui::TextEdit::multiline(&mut self.ignores_buf)
+                    .desired_width(f32::INFINITY)
+                    .desired_rows(8)
+                    .hint_text("*.psd\nsrc/*\nnotes.txt"),
+            );
+            ui.add_space(4.0);
+            ui.label(
+                RichText::new(format!(
+                    "Always ignored:\n{}",
+                    crate::steam::pack::DEFAULT_IGNORES.join("\n")
+                ))
+                .weak()
+                .size(11.0),
+            );
+            ui.add_space(12.0);
+            ui.horizontal(|ui| {
+                if ui.button("Save").clicked() {
+                    crate::ignores::set(self.ignores_buf.lines().map(|l| l.to_string()).collect());
+                    self.toasts
+                        .success("Ignore list saved")
+                        .duration(Some(Duration::from_secs(2)));
+                    self.show_ignores = false;
+                }
+                if ui.button("Cancel").clicked() {
+                    self.show_ignores = false;
+                }
+            });
+        });
+        if modal.should_close() {
+            self.show_ignores = false;
+        }
     }
 }
 
