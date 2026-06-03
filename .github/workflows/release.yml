@@ -60,8 +60,10 @@ jobs:
     needs: [windows, linux]
     runs-on: ubuntu-latest
     steps:
-      - name: Mark latest now that assets are uploaded
+      - name: Promote to full release once assets are uploaded
         env:
           GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-        run: gh release edit "${{ github.ref_name }}" --latest
+        run: |
+          rid=$(gh api "repos/${{ github.repository }}/releases/tags/${{ github.ref_name }}" --jq '.id')
+          gh api --method PATCH "repos/${{ github.repository }}/releases/${rid}" \
+            -F prerelease=false -F make_latest=true

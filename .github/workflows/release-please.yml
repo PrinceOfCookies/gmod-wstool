@@ -5,7 +5,6 @@ on:
         branches:
             - main
     workflow_dispatch:
-
 permissions:
     contents: write
     pull-requests: write
@@ -13,26 +12,16 @@ permissions:
 jobs:
     release-please:
         runs-on: ubuntu-latest
-        outputs:
-            created: ${{ steps.release.outputs.release_created }}
-            tag: ${{ steps.release.outputs.tag_name }}
         steps:
             - uses: googleapis/release-please-action@v4
               id: release
               with:
                   token: ${{ secrets.RELEASE_TOKEN }}
                   config-file: .release-please-config.json
-
-            - name: Unmark latest until build assets are ready
+            - name: Mark prerelease until assets exist
               if: ${{ steps.release.outputs.release_created }}
               env:
                   GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
               run: |
-                  release_id=$(gh api \
-                    -H "Accept: application/vnd.github+json" \
-                    "repos/${{ github.repository }}/releases/tags/${{ steps.release.outputs.tag_name }}" \
-                    --jq '.id')
-                  gh api --method PATCH \
-                    -H "Accept: application/vnd.github+json" \
-                    "repos/${{ github.repository }}/releases/${release_id}" \
-                    -f make_latest=false
+                  rid=$(gh api "repos/${{ github.repository }}/releases/tags/${{ steps.release.outputs.tag_name }}" --jq '.id')
+                  gh api --method PATCH "repos/${{ github.repository }}/releases/${rid}" -F prerelease=true
