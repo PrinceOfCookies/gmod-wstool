@@ -27,5 +27,12 @@ jobs:
               if: ${{ steps.release.outputs.release_created }}
               env:
                   GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-                  GH_REPO: ${{ github.repository }}
-              run: gh release edit "${{ steps.release.outputs.tag_name }}" --latest=false
+              run: |
+                  release_id=$(gh api \
+                    -H "Accept: application/vnd.github+json" \
+                    "repos/${{ github.repository }}/releases/tags/${{ steps.release.outputs.tag_name }}" \
+                    --jq '.id')
+                  gh api --method PATCH \
+                    -H "Accept: application/vnd.github+json" \
+                    "repos/${{ github.repository }}/releases/${release_id}" \
+                    -f make_latest=false
