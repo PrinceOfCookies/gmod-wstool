@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/Srlion/gmod-wstool/compare/v0.2.2...v0.2.3) (2026-06-03)
+
+
+### Bug Fixes
+
+* fix release asset race by gating latest flag on builds ([f1f4786](https://github.com/Srlion/gmod-wstool/commit/f1f4786657ce9c0e91633ec386236417d290f311))
+
 ## [0.2.2](https://github.com/Srlion/gmod-wstool/compare/v0.2.1...v0.2.2) (2026-06-02)
 
 
