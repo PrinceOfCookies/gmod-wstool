@@ -22,3 +22,10 @@ jobs:
               with:
                   token: ${{ secrets.RELEASE_TOKEN }}
                   config-file: .release-please-config.json
+
+            - name: Unmark latest until build assets are ready
+              if: ${{ steps.release.outputs.release_created }}
+              env:
+                  GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+                  GH_REPO: ${{ github.repository }}
+              run: gh release edit "${{ steps.release.outputs.tag_name }}" --latest=false
