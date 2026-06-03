@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.4](https://github.com/Srlion/gmod-wstool/compare/v0.2.3...v0.2.4) (2026-06-03)
+
+
+### Bug Fixes
+
+* fix typo ([8d8327f](https://github.com/Srlion/gmod-wstool/commit/8d8327f317654da43b57eaaa5a94294e0ee72943))
+* maybe maybe ([44c2251](https://github.com/Srlion/gmod-wstool/commit/44c2251000d1c3cbb9679a58fb16a38514a109e9))
+* maybe this fixes it? ([a56a2d8](https://github.com/Srlion/gmod-wstool/commit/a56a2d8d8d05955bfbd99ccff73d423c6e8d6e10))
+* test ([1c28ca4](https://github.com/Srlion/gmod-wstool/commit/1c28ca4320a65cd53edd47c88b2f24374e0192a5))
+* THIS SHOULD FIX IT ([b084ba7](https://github.com/Srlion/gmod-wstool/commit/b084ba76ef7acb85073d39d670acf7e7eb635e43))
+* this should fix latest problem ([fe6b78f](https://github.com/Srlion/gmod-wstool/commit/fe6b78ff5f292f6b486af11470378cb9ac166b05))
+* try again... ([3e6027f](https://github.com/Srlion/gmod-wstool/commit/3e6027f8330d69e3750519b586ac14f375a84915))
+
 ## [0.2.3](https://github.com/Srlion/gmod-wstool/compare/v0.2.2...v0.2.3) (2026-06-03)
 
 
