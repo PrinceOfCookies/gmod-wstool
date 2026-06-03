@@ -21,4 +21,4 @@ jobs:
               id: release
               with:
                   token: ${{ secrets.RELEASE_TOKEN }}
-                  config-file: release-please-config.json
+                  config-file: .release-please-config.json
