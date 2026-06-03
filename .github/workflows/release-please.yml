@@ -21,11 +21,4 @@ jobs:
               id: release
               with:
                   token: ${{ secrets.RELEASE_TOKEN }}
-                  release-type: rust
-
-            - name: Unset latest until assets are ready
-              if: steps.release.outputs.release_created == 'true'
-              env:
-                  GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-                  GH_REPO: ${{ github.repository }}
-              run: gh release edit "${{ steps.release.outputs.tag_name }}" --latest=false
+                  config-file: release-please-config.json
