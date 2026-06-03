@@ -23,6 +23,7 @@ jobs:
         run: cargo wix --output target/wix/gmod-wstool.msi
       - uses: softprops/action-gh-release@v3
         with:
+          tag_name: ${{ github.ref_name }}
           files: target/wix/*.msi
 
   linux:
@@ -49,7 +50,18 @@ jobs:
           nfpm package -p archlinux -t .
       - uses: softprops/action-gh-release@v3
         with:
+          tag_name: ${{ github.ref_name }}
           files: |
             *.deb
             *.rpm
             *.pkg.tar.zst
+
+  publish:
+    needs: [windows, linux]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark latest now that assets are uploaded
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release edit "${{ github.ref_name }}" --latest
