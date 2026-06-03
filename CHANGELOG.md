@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.6](https://github.com/Srlion/gmod-wstool/compare/v0.2.5...v0.2.6) (2026-06-03)
+
+
+### Bug Fixes
+
+* ugh ([65aebd9](https://github.com/Srlion/gmod-wstool/commit/65aebd94aba4f1dd5b06f9afd2bbde024ab4887e))
+
 ## [0.2.5](https://github.com/Srlion/gmod-wstool/compare/v0.2.4...v0.2.5) (2026-06-03)
 
 
