@@ -87,6 +87,12 @@ impl App {
                 ui.spinner();
                 ui.add_space(8.0);
                 ui.label("Initializing Steam client...");
+                ui.add_space(4.0);
+                ui.label(
+                    egui::RichText::new(steam::bootstrap_status())
+                        .size(13.0)
+                        .color(egui::Color32::GRAY),
+                );
             });
         });
     }
